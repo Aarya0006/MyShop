@@ -137,11 +137,16 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  
-    "http://localhost:3000",
-    "http://localhost:5174"
+CORS_ALLOWED_ORIGINS = [    
+    "https://myshop-frontend.netlify.app",
 ]
+if DEBUG:
+     CORS_ALLOWED_ORIGINS.extend([
+         "http://localhost:5173",
+         "http://localhost:5174",
+    ])
+
+
 
 
 REST_FRAMEWORK = {
